@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TravelBloom</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">TravelBloom</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </nav>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search destinations..." />
+      <button onclick="handleSearch()">Search</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="overlay">
+      <h1>Explore the World with TravelBloom</h1>
+      <p>
+        Discover breathtaking destinations, immerse yourself in new cultures,
+        and create unforgettable memories wherever you go.
+      </p>
+
+      <button class="book-btn">Book Now</button>
+
+      <!-- SOCIAL LINKS -->
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
