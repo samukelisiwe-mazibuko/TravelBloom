@@ -34,7 +34,7 @@ const recommendations = {
     beaches: [
         {
             name: "Bora Bora, French Polynesia",
-            image: "https://images.unsplash.com/photo-1598127968620-31c226c66b84?w=600",
+            image: "https://images.unsplash.com/photo-1589197331516-4f4f72d9f2c6?w=600",
             description: "A tropical paradise with crystal-clear lagoons and overwater bungalows. Perfect for snorkelling and sunsets."
         },
         {
