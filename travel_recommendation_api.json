@@ -1,0 +1,63 @@
+{
+  "countries": [
+    {
+      "name": "Australia",
+      "cities": [
+        {
+          "name": "Sydney",
+          "imageUrl": "images/sydney.jpg",
+          "description": "Sydney is famous for the Opera House and beautiful harbor."
+        },
+        {
+          "name": "Melbourne",
+          "imageUrl": "images/melbourne.jpg",
+          "description": "Melbourne is known for coffee culture and art."
+        }
+      ]
+    },
+
+    {
+      "name": "Japan",
+      "cities": [
+        {
+          "name": "Tokyo",
+          "imageUrl": "images/tokyo.jpg",
+          "description": "Tokyo blends modern technology with traditional culture."
+        },
+        {
+          "name": "Kyoto",
+          "imageUrl": "images/kyoto.jpg",
+          "description": "Kyoto is famous for temples and cherry blossoms."
+        }
+      ]
+    }
+  ],
+
+  "temples": [
+    {
+      "name": "Angkor Wat",
+      "imageUrl": "images/angkorwat.jpg",
+      "description": "A world-famous temple complex in Cambodia."
+    },
+
+    {
+      "name": "Golden Temple",
+      "imageUrl": "images/goldentemple.jpg",
+      "description": "The Golden Temple is a sacred Sikh shrine in India."
+    }
+  ],
+
+  "beaches": [
+    {
+      "name": "Bora Bora",
+      "imageUrl": "images/borabora.jpg",
+      "description": "A tropical paradise with crystal-clear water."
+    },
+
+    {
+      "name": "Copacabana",
+      "imageUrl": "images/copacabana.jpg",
+      "description": "A famous beach located in Rio de Janeiro, Brazil."
+    }
+  ]
+}
