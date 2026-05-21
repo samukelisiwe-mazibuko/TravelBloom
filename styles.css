@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #0b1d3a;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.search-bar input {
+  padding: 5px;
+}
+
+.search-bar button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center center/cover;
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.overlay h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.book-btn {
+  padding: 12px 20px;
+  background: #ff6600;
+  border: none;
+  color: white;
+  width: 150px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* SOCIAL LINKS */
+.socials a {
+  margin-right: 15px;
+  color: white;
+}
+
+/* RESULTS */
+#results {
+  padding: 20px;
+}
