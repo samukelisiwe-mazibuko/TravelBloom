@@ -1,0 +1,509 @@
+/* =====================
+   CSS Variables & Reset
+   ===================== */
+   :root {
+    --primary: #1a6b5a;
+    --accent: #e8a838;
+    --dark: #1c1c1c;
+    --light: #f7f5f0;
+    --white: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.12);
+    --radius: 14px;
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* =====================
+   Navbar
+   ===================== */
+.navbar {
+    display: none;
+    background: var(--primary);
+    color: white;
+    padding: 16px 40px;
+    align-items: center;
+    gap: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.navbar.active-nav {
+    display: flex;
+}
+
+.logo {
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    flex: 1;
+}
+
+.navbar ul li a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.navbar ul li a:hover {
+    color: var(--accent);
+}
+
+/* Search box (home nav only) */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-box input {
+    padding: 9px 14px;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    width: 220px;
+    outline: none;
+}
+
+.btn-search, .btn-reset {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-search {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+.btn-search:hover {
+    background: #d4922a;
+}
+
+.btn-reset {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.btn-reset:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+.btn-search:active, .btn-reset:active {
+    transform: scale(0.97);
+}
+
+/* =====================
+   Pages
+   ===================== */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* =====================
+   Home / Hero
+   ===================== */
+.hero {
+    position: relative;
+    height: 480px;
+    background: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1400') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26,107,90,0.72), rgba(28,28,28,0.55));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    max-width: 680px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.92;
+}
+
+/* =====================
+   Results Grid
+   ===================== */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 16px 18px 20px;
+}
+
+.card-body h3 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #777;
+    font-size: 1rem;
+}
+
+/* =====================
+   Page Header (About / Contact)
+   ===================== */
+.page-header {
+    background: var(--primary);
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-family: var(--font-head);
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    font-size: 1.05rem;
+    opacity: 0.85;
+}
+
+/* =====================
+   About Page
+   ===================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 50px 40px 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.about-icon {
+    font-size: 2.5rem;
+    margin-bottom: 14px;
+}
+
+.about-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.about-card p, .about-card ul {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-card ul li::before {
+    content: "✦ ";
+    color: var(--accent);
+}
+
+/* Team */
+.team-section {
+    padding: 20px 40px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.team-section h2 {
+    font-family: var(--font-head);
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.team-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.team-card h3 {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.team-card p {
+    font-size: 0.88rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* =====================
+   Contact Page
+   ===================== */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 40px 60px;
+    align-items: start;
+}
+
+form {
+    background: var(--white);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+form label {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--dark);
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+form input,
+form textarea {
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    transition: border-color 0.2s;
+    outline: none;
+    resize: vertical;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--primary);
+}
+
+form button {
+    margin-top: 16px;
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.1s;
+}
+
+form button:hover {
+    background: #145748;
+}
+
+form button:active {
+    transform: scale(0.98);
+}
+
+.contact-info {
+    background: var(--white);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-info h3 {
+    font-family: var(--font-head);
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+/* =====================
+   Responsive
+   ===================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 14px 20px;
+        gap: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .search-box input {
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    #results {
+        padding: 24px 20px;
+    }
+
+    .about-grid, .team-grid {
+        padding: 30px 20px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 20px 20px 40px;
+    }
+}
