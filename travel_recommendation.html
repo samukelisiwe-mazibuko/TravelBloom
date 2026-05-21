@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderlust — Discover Your Next Adventure</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <!-- Brand -->
+    <div class="nav-brand">
+      <div class="nav-logo">✈</div>
+      <span class="nav-brand-name">Wander<span>lust</span></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <li>
+        <a href="#" data-page="homePage" class="active"
+           onclick="showPage('homePage'); return false;">Home</a>
+      </li>
+      <li>
+        <a href="#" data-page="aboutPage"
+           onclick="showPage('aboutPage'); return false;">About Us</a>
+      </li>
+      <li>
+        <a href="#" data-page="contactPage"
+           onclick="showPage('contactPage'); return false;">Contact Us</a>
+      </li>
+    </ul>
+
+    <!-- Search + Buttons (home page only) -->
+    <div class="nav-search" id="searchArea">
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="beach, temple, Japan…"
+          autocomplete="off"
+        />
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </div>
+
+      <button class="btn btn-search" onclick="searchRecommendations()" title="Search">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        Search
+      </button>
+
+      <button class="btn btn-reset" onclick="clearResults()" title="Clear results">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <polyline points="1 4 1 10 7 10"/>
+          <path d="M3.51 15a9 9 0 1 0 .49-4.95"/>
+        </svg>
+        Reset
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HOME PAGE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="page active" id="homePage">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg" role="img" aria-label="Scenic travel landscape"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="hero-tagline">Your World Awaits</p>
+        <h1 class="hero-title">
+          Explore the World's<br>
+          Most <em>Breathtaking</em><br>
+          Destinations
+        </h1>
+        <p class="hero-desc">
+          From sun-drenched tropical beaches to ancient sacred temples and vibrant
+          cultures — Wanderlust curates hand-picked travel recommendations crafted
+          for the modern explorer.
+        </p>
+        <button class="btn-hero" onclick="document.getElementById('searchInput').focus()">
+          Start Exploring
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="social-bar" aria-label="Social media links">
+        <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter/X" title="Twitter">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4 4l16 16M4 20L20 4" stroke="currentColor" stroke-width="2.5"
+                  fill="none" stroke-linecap="round"/>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="YouTube" title="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88
+            0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46
+            5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78
+            2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#0A0A0F"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- Results Section (populated by JS) -->
+    <section id="resultsSection" style="display:none;"></section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand">Wander<span>lust</span></div>
+      <p class="footer-tagline">Every journey begins with a single search.</p>
+      <p class="footer-copy">© 2025 Wanderlust Travel Recommendations. All rights reserved.</p>
+    </footer>
+
+  </div><!-- /homePage -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT US PAGE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="page" id="aboutPage">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header-bg"
+           style="background-image: url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1400&q=80');">
+      </div>
+      <div class="page-header-content">
+        <p class="page-header-tag">Our Story</p>
+        <h1>About Wanderlust</h1>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="page-section">
+
+      <!-- Company Intro -->
+      <div class="about-intro">
+        <div class="about-intro-text">
+          <p class="section-label">Who We Are</p>
+          <h2>Born From a Passion for Discovery</h2>
+          <p>
+            Wanderlust was founded in 2018 by a group of seasoned travellers who
+            believed that discovering the world's most extraordinary places shouldn't
+            require endless hours of research. We set out to build a platform that
+            connects curious explorers with authentic, curated travel recommendations.
+          </p>
+          <p>
+            From hidden beaches in Southeast Asia to centuries-old temples and the
+            cultural heartbeats of continents — our recommendations are personally
+            vetted, beautifully presented, and always honest.
+          </p>
+          <p>
+            Today, Wanderlust serves millions of travellers across the globe, helping
+            them craft journeys that are not just trips, but transformative life experiences.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-num">180+</div>
+              <div class="stat-label">Countries</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">5M+</div>
+              <div class="stat-label">Travellers</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num">12K+</div>
+              <div class="stat-label">Destinations</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-intro-image">
+          <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&q=80"
+               alt="Travellers exploring the world" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Team Section -->
+      <div style="margin-top: 4rem;">
+        <div class="team-header">
+          <p class="section-label">The People Behind Wanderlust</p>
+          <h2>Meet Our Team</h2>
+        </div>
+
+        <div class="team-grid">
+
+          <div class="team-card">
+            <div class="team-avatar">🧭</div>
+            <div class="team-name">Sofia Reinholt</div>
+            <div class="team-role">Co-Founder & CEO</div>
+            <p class="team-bio">
+              A seasoned explorer with footprints in 90+ countries, Sofia drives the
+              vision and strategy of Wanderlust with infectious passion.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">🗺️</div>
+            <div class="team-name">James Okafor</div>
+            <div class="team-role">Chief Travel Curator</div>
+            <p class="team-bio">
+              A travel journalist for 15 years, James leads our team of destination
+              experts who hand-pick every recommendation on the platform.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">💻</div>
+            <div class="team-name">Priya Menon</div>
+            <div class="team-role">Lead Developer</div>
+            <p class="team-bio">
+              Priya architects the technology behind Wanderlust, ensuring a seamless,
+              fast and delightful experience for every traveller who visits.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">🎨</div>
+            <div class="team-name">Lucas Ferreira</div>
+            <div class="team-role">Head of Design</div>
+            <p class="team-bio">
+              Lucas crafts the visual language of Wanderlust — from stunning destination
+              photography to the intuitive interface you're using right now.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">📊</div>
+            <div class="team-name">Aisha Tanaka</div>
+            <div class="team-role">Data & Insights Lead</div>
+            <p class="team-bio">
+              Aisha turns millions of traveller data points into actionable insights
+              that help us continuously improve our recommendations.
+            </p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">🤝</div>
+            <div class="team-name">Marco Delacroix</div>
+            <div class="team-role">Partnerships Director</div>
+            <p class="team-bio">
+              Marco builds relationships with the world's finest hotels, airlines, and
+              local operators so our users always get the best experience.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- /page-section -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand">Wander<span>lust</span></div>
+      <p class="footer-tagline">Every journey begins with a single search.</p>
+      <p class="footer-copy">© 2025 Wanderlust Travel Recommendations. All rights reserved.</p>
+    </footer>
+
+  </div><!-- /aboutPage -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT US PAGE
+  ════════════════════════════════════════════════════════════ -->
+  <div class="page" id="contactPage">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header-bg"
+           style="background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1400&q=80');">
+      </div>
+      <div class="page-header-content">
+        <p class="page-header-tag">Get In Touch</p>
+        <h1>Contact Us</h1>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="page-section">
+      <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <p class="section-label" style="font-size:0.75rem;font-weight:600;
+             letter-spacing:0.18em;text-transform:uppercase;
+             color:var(--gold);margin-bottom:0.75rem;">
+            Reach Out
+          </p>
+          <h2>We'd Love to Hear From You</h2>
+          <p>
+            Whether you have a question about a destination, want to suggest a hidden
+            gem, need partnership information, or just want to say hello — our team
+            is here and ready to help.
+          </p>
+
+          <div class="contact-details">
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4
+                           c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <span>hello@wanderlust.travel</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0
+                  1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0
+                  1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72
+                  12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09
+                  9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45
+                  12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Phone</strong>
+                <span>+1 (888) 926-3587</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Office</strong>
+                <span>42 Explorer Lane, San Francisco, CA 94105</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="contact-item-text">
+                <strong>Business Hours</strong>
+                <span>Monday – Friday, 9 AM – 6 PM PST</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+
+          <form id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" name="name"
+                       placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" name="email"
+                       placeholder="jane@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject</label>
+              <input type="text" id="contactSubject" name="subject"
+                     placeholder="How can we help?" />
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Your Message</label>
+              <textarea id="contactMessage" name="message"
+                        placeholder="Tell us about your travel questions, suggestions, or anything else…"
+                        required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Send Message ✈
+            </button>
+          </form>
+
+          <!-- Success state -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">🎉</div>
+            <h3>Message Sent!</h3>
+            <p>Thanks for reaching out. Our team will get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /page-section -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-brand">Wander<span>lust</span></div>
+      <p class="footer-tagline">Every journey begins with a single search.</p>
+      <p class="footer-copy">© 2025 Wanderlust Travel Recommendations. All rights reserved.</p>
+    </footer>
+
+  </div><!-- /contactPage -->
+
+
+  <!-- Scripts -->
+  <script src="js/travel_recommendation.js"></script>
+
+</body>
+</html>
