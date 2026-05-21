@@ -4,9 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wanderlust — Discover Your Next Adventure</title>
+  <p>
+    Welcome to Wanderlust Travel Recommendations. Our website helps travellers
+    discover amazing destinations, beaches, temples, and cities around the world.
+    Use the navigation menu to learn about us, contact us, or explore travel ideas.
+</p>
+  
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>" />
+  <style>
+    .page {
+      display: none;
+    }
+  </style>  
 </head>
+
+<script>
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.style.display = 'none';
+      });
+    
+      // Show selected page
+      document.getElementById(pageId).style.display = 'block';
+    }
+    
+    // Show Home page when website loads
+    window.onload = function () {
+      showPage('homePage');
+    };
+    </script>
+
+
+
 <body>
 
   <!-- ═══════════════════════════════════════════════════════════
